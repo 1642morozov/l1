@@ -3,7 +3,7 @@
 #define k 8
 using namespace std;
 int main()
-{
+{   //test push
     sign *S = new sign[k];
     sign OB;
     int d, m, y, i, j, f, q, fn;
