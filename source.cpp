@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "sign.h"
-#define k 8
+#define k 3
 using namespace std;
 int main()
 {   //test push
@@ -9,6 +9,8 @@ int main()
     int d, m, y, i, j, f, q, fn;
     char n[30];
     char sg[15];
+    int tmp1, tmp2;
+    char tmpc;
     for (i=0;i<k;i++)
     {
 //        S[i]->sign();
@@ -37,26 +39,10 @@ int main()
     f=0;                        //sortirovka
     for (i=0;i<k-1;i++)
     {
-        if(S[i].data[2]>S[i+1].data[2])
+        if(S[i]>S[i+1])
         {
             OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
             f=1;
-        }
-        else if (S[i].data[2]==S[i+1].data[2])
-        {
-            if(S[i].data[1]>S[i+1].data[1])
-            {
-                OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
-                f=1;
-            }
-            else if(S[i].data[1]==S[i+1].data[1])
-            {
-                if(S[i].data[0]>S[i+1].data[0])
-                {
-                    OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
-                    f=1;
-                }
-            }
         }
     }
     }
@@ -84,8 +70,8 @@ int main()
             f=1;
             for (j=0;sg[j]!='\0';j++)
             {
-
-                if(S[i].sig[j]!=sg[j])
+                tmpc=S[i].getsi(j);
+                if(tmpc!=sg[j])
                 {
                     f=0;
                 }

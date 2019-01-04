@@ -2,7 +2,8 @@
 #define SIGN_H_INCLUDED
 
 class sign{
-public:
+//public:
+private:
     char name[30];  //imya familia
     char sig[15];   /*
     oven    21 march-19 aprill      ram
@@ -18,11 +19,16 @@ public:
     vodoley 20 yanvar -18 fevral    water-bearer
     ribi    19 fevral -20 march     fish
     */
+
+public:
     int data[3];
     sign();
     ~sign();
     void setsign(int day, int month, int year, char nam[30],char si[15]);
     void getsign();
+    int getdat(int n);
+    char getsi(int n);
+    bool operator>(const sign &s2);
 };
 
 #endif // SIGN_H_INCLUDED

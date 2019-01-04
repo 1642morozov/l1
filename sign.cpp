@@ -63,3 +63,46 @@ public:
         cout<<"day "<<data[0]<<"; month "<<data[1]<<"; year "<<data[2]<<endl;
         cout<<"sign - "<<sig<<endl;
     }
+    int sign::getdat(int n)
+    {
+        return data[n];
+    }
+    char sign::getsi(int n)
+    {
+        return sig[n];
+    }
+    bool operator>(const sign &s1, const sign &s2)
+    {
+        if(s1.data[2]>s2.data[2])
+        {
+            //OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
+            //f=1;
+            return 1;
+        }
+        else if (s1.data[2]==s2.data[2])
+        {
+            if(s1.data[1]>s2.data[1])
+            {
+                //OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
+                //f=1;
+                return 1;
+            }
+            else if(s1.data[1]==s2.data[1])
+            {
+                if(s1.data[0]>s1.data[0])
+                {
+                    //OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
+                    //f=1;
+                    return 1;
+                }
+            }
+        }
+        return 0;
+    }
+
+   // Chis& operator ++()        //prefix
+  //  {
+  //      q[numb] += 2;
+  //      return *this;
+  //  }
+
