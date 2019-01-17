@@ -1,6 +1,6 @@
 ﻿#include <iostream>
 #include "sign.h"
-#define k 3
+#define k 8
 using namespace std;
 int main()
 {   //test push
@@ -65,6 +65,7 @@ int main()
         fn = 0;
         cout<<"vvedite znak zodiaka:"<<endl;
         cin>>sg;
+        cout<<endl;
         for (i=0;i<k;i++)
         {
             f=1;
@@ -102,5 +103,5 @@ int main()
 //        S[i].~sign();
 
     }
-    cin>>q;
+    //cin>>q;
 }

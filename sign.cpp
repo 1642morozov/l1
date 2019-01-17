@@ -71,13 +71,13 @@ public:
     {
         return sig[n];
     }
-    bool operator>(const sign &s1, const sign &s2)
+        bool operator>(const sign &s1, const sign &s2)
     {
         if(s1.data[2]>s2.data[2])
         {
             //OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
             //f=1;
-            return 1;
+            return s1.data[2] > s2.data[2];
         }
         else if (s1.data[2]==s2.data[2])
         {
@@ -85,19 +85,48 @@ public:
             {
                 //OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
                 //f=1;
-                return 1;
+                return s1.data[1] > s2.data[1];
             }
             else if(s1.data[1]==s2.data[1])
             {
-                if(s1.data[0]>s1.data[0])
+                if(s1.data[0]>s2.data[0])
                 {
                     //OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
                     //f=1;
-                    return 1;
+                    return s1.data[0] > s2.data[0];
                 }
             }
         }
-        return 0;
+        return 0 > 1;
+    }
+
+    bool operator <(const sign &s1, const sign &s2)
+    {
+        if(s1.data[2]<s2.data[2])
+        {
+            //OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
+            //f=1;
+            return s1.data[2] < s2.data[2];
+        }
+        else if (s1.data[2]==s2.data[2])
+        {
+            if(s1.data[1]<s2.data[1])
+            {
+                //OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
+                //f=1;
+                return s1.data[1] < s2.data[1];
+            }
+            else if(s1.data[1]==s2.data[1])
+            {
+                if(s1.data[0]<s2.data[0])
+                {
+                    //OB=S[i]; S[i]=S[i+1]; S[i+1]=OB;
+                    //f=1;
+                    return s1.data[0] < s2.data[0];
+                }
+            }
+        }
+        return 1 < 0;
     }
 
    // Chis& operator ++()        //prefix

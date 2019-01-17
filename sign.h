@@ -28,7 +28,9 @@ public:
     void getsign();
     int getdat(int n);
     char getsi(int n);
-    bool operator>(const sign &s2);
+    //bool operator>(const sign &s2);
+    friend bool operator >(const sign &s1, const sign &s2);
+    friend bool operator <(const sign &s1, const sign &s2);
 };
 
 #endif // SIGN_H_INCLUDED
